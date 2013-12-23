@@ -149,7 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ISEP-ACM.Core\ISEP-ACM.Core.csproj">
-      <Project>{B4785E4D-C0A3-4A34-84C5-A622F396D1D5}</Project>
+      <Project>{0143B8BA-1606-48DE-8AF1-3C40988E5647}</Project>
       <Name>ISEP-ACM.Core</Name>
     </ProjectReference>
   </ItemGroup>
