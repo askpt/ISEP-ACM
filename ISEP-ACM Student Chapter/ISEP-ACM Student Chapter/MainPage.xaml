@@ -19,9 +19,6 @@
     		<phone:PivotItem Header="news">
     			<Grid/>
     		</phone:PivotItem>
-            <phone:PivotItem Header="categories">
-    			<Grid/>
-    		</phone:PivotItem>
             <phone:PivotItem Header="about us">
     			<Grid/>
     		</phone:PivotItem>

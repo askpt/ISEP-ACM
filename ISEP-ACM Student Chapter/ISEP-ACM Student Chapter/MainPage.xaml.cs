@@ -8,11 +8,14 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
+using ISEP_ACM.Core;
 
 namespace ISEP_ACM_Student_Chapter
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        public static Posts posts;
+
         // Constructor
         public MainPage()
         {
@@ -20,6 +23,16 @@ namespace ISEP_ACM_Student_Chapter
 
             // Sample code to localize the ApplicationBar
             //BuildLocalizedApplicationBar();
+
+            InitializePosts();
+
+            
+        }
+
+        private static async void InitializePosts()
+        {
+            posts = await Services.LoadPosts();
+
         }
 
         // Sample code for building a localized ApplicationBar
