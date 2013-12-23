@@ -72,7 +72,10 @@ namespace ISEP_ACM_Student_Chapter
 
         private void BrowserView_ScriptNotify(object sender, NotifyEventArgs e)
         {
-            BrowserView.Dispatcher.BeginInvoke(() => WebBrowserHelper.OpenBrowser(e.Value)); 
+
+            WebBrowserTask webBrowserTask = new WebBrowserTask();
+            webBrowserTask.Uri = new Uri(e.Value); //Uri of the link clicked
+            webBrowserTask.Show();
         }
 
     }
