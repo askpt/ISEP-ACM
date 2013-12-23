@@ -8,7 +8,11 @@
     <!--Application Resources-->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:ISEP_ACM_Student_Chapter" x:Key="LocalizedStrings"/>
-    </Application.Resources>
+            <SolidColorBrush x:Key="WebBrowserForegroundColor"
+                         Color="{StaticResource PhoneForegroundColor}" />
+            <SolidColorBrush x:Key="WebBrowserBackgroundColor"
+                         Color="{StaticResource PhoneBackgroundColor}" />
+        </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
