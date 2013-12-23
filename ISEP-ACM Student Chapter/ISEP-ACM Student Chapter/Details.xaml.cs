@@ -9,16 +9,19 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
 using ISEP_ACM.Core;
+using System.Threading.Tasks;
+using Microsoft.Phone.Tasks;
 
 namespace ISEP_ACM_Student_Chapter
 {
     public partial class Details : PhoneApplicationPage
     {
+
+        private Post _post;
         public Details()
         {
             InitializeComponent();
 
-            BuildLocalizedApplicationBar();
                         
         }
 
@@ -37,7 +40,9 @@ namespace ISEP_ACM_Student_Chapter
 
         private void appBarButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            var uri = new Uri(_post.url);
+            WebBrowserTask webBrowserTask = new WebBrowserTask { Uri = uri };
+            webBrowserTask.Show(); 
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -50,14 +55,25 @@ namespace ISEP_ACM_Student_Chapter
             {
                 if (item.id == index)
                 {
-                    DataContext = item;
-
-                    BrowserView.NavigateToString(WebBrowserHelper.WrapHtml(item.content, BrowserView.ActualWidth)); 
+                    _post = item;
+                    LoadAll(item);
                 }
             }
-
-            
-
         }
+
+        private void LoadAll(Post item)
+        {
+            DataContext = item;
+
+            BrowserView.NavigateToString(WebBrowserHelper.WrapHtml(item.content, BrowserView.ActualWidth));
+
+            BuildLocalizedApplicationBar();
+        }
+
+        private void BrowserView_ScriptNotify(object sender, NotifyEventArgs e)
+        {
+            BrowserView.Dispatcher.BeginInvoke(() => WebBrowserHelper.OpenBrowser(e.Value)); 
+        }
+
     }
 }

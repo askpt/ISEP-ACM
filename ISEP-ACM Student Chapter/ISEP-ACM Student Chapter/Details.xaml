@@ -31,7 +31,8 @@
             <phone:WebBrowser Foreground="{StaticResource WebBrowserForegroundColor}"
                                       Background="{StaticResource WebBrowserBackgroundColor}"
                                       Name="BrowserView"
-                                      IsScriptEnabled="True"/>
+                                      IsScriptEnabled="True"
+                                      ScriptNotify="BrowserView_ScriptNotify"/>
         </Grid>
     </Grid>
 
