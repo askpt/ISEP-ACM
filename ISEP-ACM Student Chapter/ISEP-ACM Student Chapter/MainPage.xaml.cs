@@ -43,16 +43,35 @@ namespace ISEP_ACM_Student_Chapter
             appBarButton.Text = AppResources.AppBarButtonText;
             appBarButton.Click += appBarButton_Click;
             ApplicationBar.Buttons.Add(appBarButton);
-
-            // Create a new menu item with the localized string from AppResources.
-            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-            ApplicationBar.MenuItems.Add(appBarMenuItem);
         }
 
         async void appBarButton_Click(object sender, EventArgs e)
         {
             await Services.CreatePosts();
             InitializePosts();
+        }
+
+        private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Apply cast to the object sender
+            LongListSelector selector = sender as LongListSelector;
+            if (selector == null)
+            {
+                return;
+            }
+
+            //Apply cast to the selected item
+            Post data = selector.SelectedItem as Post;
+            if (data == null)
+            {
+                return;
+            }
+
+            selector.SelectedItem = null;
+
+            Uri uri = new Uri(string.Format("/Details.xaml?id={0}", data.id), UriKind.Relative);
+
+            NavigationService.Navigate(uri);
         }
     }
 }

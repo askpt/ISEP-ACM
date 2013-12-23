@@ -17,7 +17,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Pivot Title="ISEP-ACM Student Chapter">
     		<phone:PivotItem Header="news">
-                <phone:LongListSelector ItemsSource="{Binding posts}" LayoutMode="List">
+                <phone:LongListSelector ItemsSource="{Binding posts}" LayoutMode="List" SelectionChanged="LongListSelector_SelectionChanged">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
