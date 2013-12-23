@@ -18,7 +18,7 @@ namespace ISEP_ACM.Core
         {
             HttpClient client = new HttpClient();
 
-            var baseUrl = "http://193.136.60.87/portal/?json=get_posts";
+            var baseUrl = "http://193.136.60.87/portal/?json=get_posts&count=20";
 
             string jsonPosts = await client.GetStringAsync(baseUrl);
 

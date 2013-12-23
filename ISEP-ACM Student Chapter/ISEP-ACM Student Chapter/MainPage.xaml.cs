@@ -22,33 +22,37 @@ namespace ISEP_ACM_Student_Chapter
             InitializeComponent();
 
             // Sample code to localize the ApplicationBar
-            //BuildLocalizedApplicationBar();
+            BuildLocalizedApplicationBar();
 
             InitializePosts();
-
-            
         }
 
-        private static async void InitializePosts()
+        private async void InitializePosts()
         {
-            posts = await Services.LoadPosts();
-
+            DataContext = await Services.LoadPosts();
         }
 
         // Sample code for building a localized ApplicationBar
-        //private void BuildLocalizedApplicationBar()
-        //{
-        //    // Set the page's ApplicationBar to a new instance of ApplicationBar.
-        //    ApplicationBar = new ApplicationBar();
+        private void BuildLocalizedApplicationBar()
+        {
+            // Set the page's ApplicationBar to a new instance of ApplicationBar.
+            ApplicationBar = new ApplicationBar();
 
-        //    // Create a new button and set the text value to the localized string from AppResources.
-        //    ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
-        //    appBarButton.Text = AppResources.AppBarButtonText;
-        //    ApplicationBar.Buttons.Add(appBarButton);
+            // Create a new button and set the text value to the localized string from AppResources.
+            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
+            appBarButton.Text = AppResources.AppBarButtonText;
+            appBarButton.Click += appBarButton_Click;
+            ApplicationBar.Buttons.Add(appBarButton);
 
-        //    // Create a new menu item with the localized string from AppResources.
-        //    ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
-        //    ApplicationBar.MenuItems.Add(appBarMenuItem);
-        //}
+            // Create a new menu item with the localized string from AppResources.
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem(AppResources.AppBarMenuItemText);
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+        }
+
+        async void appBarButton_Click(object sender, EventArgs e)
+        {
+            await Services.CreatePosts();
+            InitializePosts();
+        }
     }
 }
