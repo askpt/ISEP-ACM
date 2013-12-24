@@ -37,7 +37,7 @@ namespace ISEP_ACM_Student_Chapter
             catch (Exception)
             {
 
-                MessageBox.Show("No network available!");
+                MessageBox.Show(AppResources.Error_Network);
             }
             
         }
@@ -64,7 +64,7 @@ namespace ISEP_ACM_Student_Chapter
             }
             else
             {
-                MessageBox.Show("No network available!");
+                MessageBox.Show(AppResources.Error_Network);
             }
         }
 

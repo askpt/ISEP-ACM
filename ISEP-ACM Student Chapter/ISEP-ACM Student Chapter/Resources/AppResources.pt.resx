@@ -146,4 +146,7 @@
   <data name="MainPage_News" xml:space="preserve">
     <value>notícias</value>
   </data>
+  <data name="Error_Network" xml:space="preserve">
+    <value>Rede não disponível!</value>
+  </data>
 </root>

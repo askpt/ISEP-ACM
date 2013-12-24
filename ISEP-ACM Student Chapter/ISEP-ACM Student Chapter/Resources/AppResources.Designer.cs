@@ -97,6 +97,15 @@ namespace ISEP_ACM_Student_Chapter.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Error_Network {
+            get {
+                return ResourceManager.GetString("Error_Network", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to about us.
         /// </summary>
         public static string MainPage_AboutUs {
