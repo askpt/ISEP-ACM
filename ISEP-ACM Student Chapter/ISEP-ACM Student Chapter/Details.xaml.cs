@@ -65,7 +65,7 @@ namespace ISEP_ACM_Student_Chapter
         {
             DataContext = item;
 
-            BrowserView.NavigateToString(WebBrowserHelper.WrapHtml(item.content, BrowserView.ActualWidth));
+            BrowserView.NavigateToString(WebBrowserHelper.WrapHtml(item.content, 0));
 
             BuildLocalizedApplicationBar();
         }
