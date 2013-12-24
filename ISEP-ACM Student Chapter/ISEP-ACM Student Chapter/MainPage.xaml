@@ -15,8 +15,8 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <phone:Pivot Title="ISEP-ACM Student Chapter">
-    		<phone:PivotItem Header="news">
+        <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.MainPage_News, Source={StaticResource LocalizedStrings}}">
                 <phone:LongListSelector ItemsSource="{Binding posts}" LayoutMode="List" SelectionChanged="LongListSelector_SelectionChanged">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
@@ -28,7 +28,7 @@
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
             </phone:PivotItem>
-            <phone:PivotItem Header="about us">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.MainPage_AboutUs, Source={StaticResource LocalizedStrings}}">
     			<Grid/>
     		</phone:PivotItem>
     	</phone:Pivot>
