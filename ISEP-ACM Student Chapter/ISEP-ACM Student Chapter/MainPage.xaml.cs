@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
 using ISEP_ACM.Core;
+using Microsoft.Phone.Net.NetworkInformation;
 
 namespace ISEP_ACM_Student_Chapter
 {
@@ -29,7 +30,16 @@ namespace ISEP_ACM_Student_Chapter
 
         private async void InitializePosts()
         {
-            DataContext = await Services.LoadPosts();
+            try
+            {
+                DataContext = await Services.LoadPosts();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No network available!");
+            }
+            
         }
 
         // Sample code for building a localized ApplicationBar
@@ -47,8 +57,15 @@ namespace ISEP_ACM_Student_Chapter
 
         async void appBarButton_Click(object sender, EventArgs e)
         {
-            await Services.CreatePosts();
-            InitializePosts();
+            if (DeviceNetworkInformation.IsNetworkAvailable)
+            {
+                await Services.CreatePosts();
+                InitializePosts();
+            }
+            else
+            {
+                MessageBox.Show("No network available!");
+            }
         }
 
         private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
