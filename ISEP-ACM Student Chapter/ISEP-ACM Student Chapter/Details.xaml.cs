@@ -32,7 +32,7 @@ namespace ISEP_ACM_Student_Chapter
             ApplicationBar = new ApplicationBar();
 
             // Create a new button and set the text value to the localized string from AppResources.
-            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/appbar.add.rest.png", UriKind.Relative));
+            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Window-New-Open.png", UriKind.RelativeOrAbsolute));
             appBarButton.Text = AppResources.Details_AppBarBtn_OpenBrowser;
             appBarButton.Click += appBarButton_Click;
             ApplicationBar.Buttons.Add(appBarButton);

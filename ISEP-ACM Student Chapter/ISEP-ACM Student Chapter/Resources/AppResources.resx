@@ -135,7 +135,7 @@
     <value>Menu Item</value>
   </data>
   <data name="Details_AppBarBtn_OpenBrowser" xml:space="preserve">
-    <value>open news in browser</value>
+    <value>open in browser</value>
   </data>
   <data name="MainPage_AboutUs" xml:space="preserve">
     <value>about us</value>
