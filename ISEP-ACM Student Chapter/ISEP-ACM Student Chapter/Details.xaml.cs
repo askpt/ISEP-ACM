@@ -41,7 +41,15 @@ namespace ISEP_ACM_Student_Chapter
             appBarButtonShare.Text = AppResources.Share;
             appBarButtonShare.Click += ShareTask;
             ApplicationBar.Buttons.Add(appBarButtonShare);
+
+            ApplicationBarIconButton appBarButtonEmail = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Share.png", UriKind.RelativeOrAbsolute));
+            appBarButtonEmail.Text = "Email";
+            appBarButtonEmail.Click += EmailNewTask;
+            ApplicationBar.Buttons.Add(appBarButtonEmail);
+    
         }
+
+       
 
         private void appBarButton_Click(object sender, EventArgs e)
         {
@@ -94,5 +102,14 @@ namespace ISEP_ACM_Student_Chapter
             shareLinkTask.Show();
         }
 
+        private void EmailNewTask(object sender, EventArgs e)
+        {
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+
+            emailComposeTask.Subject = _post.title;
+            emailComposeTask.Body = _post.url;
+
+            emailComposeTask.Show();
+        }
     }
 }
