@@ -32,10 +32,15 @@ namespace ISEP_ACM_Student_Chapter
             ApplicationBar = new ApplicationBar();
 
             // Create a new button and set the text value to the localized string from AppResources.
-            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Window-New-Open.png", UriKind.RelativeOrAbsolute));
-            appBarButton.Text = AppResources.Details_AppBarBtn_OpenBrowser;
-            appBarButton.Click += appBarButton_Click;
-            ApplicationBar.Buttons.Add(appBarButton);
+            ApplicationBarIconButton appBarButtonLink = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Window-New-Open.png", UriKind.RelativeOrAbsolute));
+            appBarButtonLink.Text = AppResources.Details_AppBarBtn_OpenBrowser;
+            appBarButtonLink.Click += appBarButton_Click;
+            ApplicationBar.Buttons.Add(appBarButtonLink);
+
+            ApplicationBarIconButton appBarButtonShare = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Window-New-Open.png", UriKind.RelativeOrAbsolute));
+            appBarButtonShare.Text = "Share";
+            appBarButtonShare.Click += ShareTask;
+            ApplicationBar.Buttons.Add(appBarButtonShare);
         }
 
         private void appBarButton_Click(object sender, EventArgs e)
@@ -76,6 +81,17 @@ namespace ISEP_ACM_Student_Chapter
             WebBrowserTask webBrowserTask = new WebBrowserTask();
             webBrowserTask.Uri = new Uri(e.Value); //Uri of the link clicked
             webBrowserTask.Show();
+        }
+
+        private void ShareTask(object sender, EventArgs e)
+        {
+            ShareLinkTask shareLinkTask = new ShareLinkTask();
+
+            shareLinkTask.Title = _post.title;
+            shareLinkTask.LinkUri = new Uri(_post.url, UriKind.Absolute);
+            shareLinkTask.Message = "";
+
+            shareLinkTask.Show();
         }
 
     }
