@@ -29,9 +29,12 @@
                 </phone:LongListSelector>
             </phone:PivotItem>
             <phone:PivotItem Header="{Binding Path=LocalizedResources.MainPage_AboutUs, Source={StaticResource LocalizedStrings}}">
-    			<Grid/>
-    		</phone:PivotItem>
-    	</phone:Pivot>
+                <StackPanel>
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutUs_Detail_1 ,Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" TextAlignment="Center" FontSize="22"/>
+                    <TextBlock Text="{Binding Path=LocalizedResources.AboutUs_Detail_2 ,Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" TextAlignment="Center" FontSize="22"/>
+                </StackPanel>
+            </phone:PivotItem>
+        </phone:Pivot>
 
         <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named

@@ -149,4 +149,10 @@
   <data name="Error_Network" xml:space="preserve">
     <value>No network available!</value>
   </data>
+  <data name="AboutUs_Detail_1" xml:space="preserve">
+    <value>The Association for Computing Machinery (ACM) was created in 1947 and was the first scientific and educational society dedicated to the computing. Since that time, the ACM is growing steadily and became one of the biggest scientific societies worldwide, promoting events, and bringing the knowledge and interest in the area in all points of the planet.</value>
+  </data>
+  <data name="AboutUs_Detail_2" xml:space="preserve">
+    <value>Our objective, as student chapter, is increase the knowledge exchange and bring to our region the expertise, self-learning spirit and desire to inovate.</value>
+  </data>
 </root>

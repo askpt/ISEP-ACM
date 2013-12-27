@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISEP_ACM_Student_Chapter.Resources {
+namespace ISEP_ACM_Student_Chapter.Resources
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,130 +23,180 @@ namespace ISEP_ACM_Student_Chapter.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class AppResources {
-        
+    public class AppResources
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal AppResources() {
+        internal AppResources()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        public static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ISEP_ACM_Student_Chapter.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
-            get {
+        public static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to The Association for Computing Machinery (ACM) was created in 1947 and was the first scientific and educational society dedicated to the computing. Since that time, the ACM is growing steadily and became one of the biggest scientific societies worldwide, promoting events, and bringing the knowledge and interest in the area in all points of the planet..
+        /// </summary>
+        public static string AboutUs_Detail_1
+        {
+            get
+            {
+                return ResourceManager.GetString("AboutUs_Detail_1", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Our objective, as student chapter, is increase the knowledge exchange and bring to our region the expertise, self-learning spirit and desire to inovate..
+        /// </summary>
+        public static string AboutUs_Detail_2
+        {
+            get
+            {
+                return ResourceManager.GetString("AboutUs_Detail_2", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to add.
         /// </summary>
-        public static string AppBarButtonText {
-            get {
+        public static string AppBarButtonText
+        {
+            get
+            {
                 return ResourceManager.GetString("AppBarButtonText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Menu Item.
         /// </summary>
-        public static string AppBarMenuItemText {
-            get {
+        public static string AppBarMenuItemText
+        {
+            get
+            {
                 return ResourceManager.GetString("AppBarMenuItemText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to ISEP-ACM Student Chapter.
         /// </summary>
-        public static string ApplicationTitle {
-            get {
+        public static string ApplicationTitle
+        {
+            get
+            {
                 return ResourceManager.GetString("ApplicationTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///   Looks up a localized string similar to open news in browser.
+        ///   Looks up a localized string similar to open in browser.
         /// </summary>
-        public static string Details_AppBarBtn_OpenBrowser {
-            get {
+        public static string Details_AppBarBtn_OpenBrowser
+        {
+            get
+            {
                 return ResourceManager.GetString("Details_AppBarBtn_OpenBrowser", resourceCulture);
             }
         }
-        
+
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to No network available!.
         /// </summary>
-        public static string Error_Network {
-            get {
+        public static string Error_Network
+        {
+            get
+            {
                 return ResourceManager.GetString("Error_Network", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to about us.
         /// </summary>
-        public static string MainPage_AboutUs {
-            get {
+        public static string MainPage_AboutUs
+        {
+            get
+            {
                 return ResourceManager.GetString("MainPage_AboutUs", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to refresh news.
         /// </summary>
-        public static string MainPage_AppBarBtn_Refresh {
-            get {
+        public static string MainPage_AppBarBtn_Refresh
+        {
+            get
+            {
                 return ResourceManager.GetString("MainPage_AppBarBtn_Refresh", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to news.
         /// </summary>
-        public static string MainPage_News {
-            get {
+        public static string MainPage_News
+        {
+            get
+            {
                 return ResourceManager.GetString("MainPage_News", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to LeftToRight.
         /// </summary>
-        public static string ResourceFlowDirection {
-            get {
+        public static string ResourceFlowDirection
+        {
+            get
+            {
                 return ResourceManager.GetString("ResourceFlowDirection", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to en-US.
         /// </summary>
-        public static string ResourceLanguage {
-            get {
+        public static string ResourceLanguage
+        {
+            get
+            {
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
             }
         }
