@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\AppBar\Mail.png" />
     <Content Include="Assets\AppBar\Reload.png" />
     <Content Include="Assets\AppBar\Share.png" />
     <Content Include="Assets\AppBar\Window-New-Open.png" />

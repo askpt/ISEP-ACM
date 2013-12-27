@@ -70,7 +70,7 @@ namespace ISEP_ACM_Student_Chapter.Resources
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to The Association for Computing Machinery (ACM) was created in 1947 and was the first scientific and educational society dedicated to the computing. Since that time, the ACM is growing steadily and became one of the biggest scientific societies worldwide, promoting events, and bringing the knowledge and interest in the area in all points of the planet..
+        ///   Looks up a localized string similar to The ISEP-ACM Student Chapter is a portuguese group officialy registered in the Association for Computer Machinery (ACM) and have the mission to contribute for the communication and the development of the computing, in all of its aspects..
         /// </summary>
         public static string AboutUs_Detail_1
         {
@@ -81,7 +81,7 @@ namespace ISEP_ACM_Student_Chapter.Resources
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Our objective, as student chapter, is increase the knowledge exchange and bring to our region the expertise, self-learning spirit and desire to inovate..
+        ///   Looks up a localized string similar to The Association for Computer Machinery is the biggest educational and scientific  association about computing, with more than 10000 member, bringing together professionals, educators and researchers from industry, academy and government, trying to increase the dialogue, the resource share and addressing the challenges in this field..
         /// </summary>
         public static string AboutUs_Detail_2
         {
@@ -132,6 +132,17 @@ namespace ISEP_ACM_Student_Chapter.Resources
             get
             {
                 return ResourceManager.GetString("Details_AppBarBtn_OpenBrowser", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to send email.
+        /// </summary>
+        public static string Details_SendEmail
+        {
+            get
+            {
+                return ResourceManager.GetString("Details_SendEmail", resourceCulture);
             }
         }
 

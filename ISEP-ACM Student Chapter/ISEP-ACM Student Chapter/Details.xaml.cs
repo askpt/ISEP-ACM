@@ -42,8 +42,8 @@ namespace ISEP_ACM_Student_Chapter
             appBarButtonShare.Click += ShareTask;
             ApplicationBar.Buttons.Add(appBarButtonShare);
 
-            ApplicationBarIconButton appBarButtonEmail = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Share.png", UriKind.RelativeOrAbsolute));
-            appBarButtonEmail.Text = "Email";
+            ApplicationBarIconButton appBarButtonEmail = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Mail.png", UriKind.RelativeOrAbsolute));
+            appBarButtonEmail.Text = AppResources.Details_SendEmail;
             appBarButtonEmail.Click += EmailNewTask;
             ApplicationBar.Buttons.Add(appBarButtonEmail);
     

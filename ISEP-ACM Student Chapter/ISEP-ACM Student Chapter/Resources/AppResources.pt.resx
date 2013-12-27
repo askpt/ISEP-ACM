@@ -158,4 +158,7 @@
   <data name="Share" xml:space="preserve">
     <value>partilhar</value>
   </data>
+  <data name="Details_SendEmail" xml:space="preserve">
+    <value>envia email</value>
+  </data>
 </root>
