@@ -43,7 +43,7 @@ namespace ISEP_ACM.Core
         public string title_plain { get; set; }
         public string content { get; set; }
         public string excerpt { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public string modified { get; set; }
         public List<Category> categories { get; set; }
         public List<object> tags { get; set; }
