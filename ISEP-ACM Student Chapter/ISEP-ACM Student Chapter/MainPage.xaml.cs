@@ -10,6 +10,7 @@ using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
 using ISEP_ACM.Core;
 using Microsoft.Phone.Net.NetworkInformation;
+using Microsoft.Phone.Tasks;
 
 namespace ISEP_ACM_Student_Chapter
 {
@@ -53,6 +54,11 @@ namespace ISEP_ACM_Student_Chapter
             appBarButton.Text = AppResources.MainPage_AppBarBtn_Refresh;
             appBarButton.Click += appBarButton_Click;
             ApplicationBar.Buttons.Add(appBarButton);
+
+            ApplicationBarMenuItem appBarMenuContact = new ApplicationBarMenuItem();
+            appBarMenuContact.Text = AppResources.ContactUs;
+            appBarMenuContact.Click += ContactUs;
+            ApplicationBar.MenuItems.Add(appBarMenuContact);
         }
 
         async void appBarButton_Click(object sender, EventArgs e)
@@ -89,6 +95,16 @@ namespace ISEP_ACM_Student_Chapter
             Uri uri = new Uri(string.Format("/Details.xaml?id={0}", data.id), UriKind.Relative);
 
             NavigationService.Navigate(uri);
+        }
+
+        void ContactUs(object sender, EventArgs e)
+        {
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+
+            emailComposeTask.To = "acm.student.chapter@isep.ipp.pt";
+            emailComposeTask.Subject = "[WP8 App]";
+
+            emailComposeTask.Show();
         }
     }
 }

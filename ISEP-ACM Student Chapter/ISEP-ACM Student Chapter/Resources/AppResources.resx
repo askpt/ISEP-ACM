@@ -158,6 +158,9 @@
   <data name="Share" xml:space="preserve">
     <value>share</value>
   </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>contact us</value>
+  </data>
   <data name="Details_SendEmail" xml:space="preserve">
     <value>send email</value>
   </data>

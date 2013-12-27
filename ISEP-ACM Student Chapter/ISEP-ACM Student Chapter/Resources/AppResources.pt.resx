@@ -161,4 +161,7 @@
   <data name="Details_SendEmail" xml:space="preserve">
     <value>envia email</value>
   </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>contacta-nos</value>
+  </data>
 </root>

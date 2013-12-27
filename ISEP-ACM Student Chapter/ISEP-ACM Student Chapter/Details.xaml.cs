@@ -46,7 +46,11 @@ namespace ISEP_ACM_Student_Chapter
             appBarButtonEmail.Text = AppResources.Details_SendEmail;
             appBarButtonEmail.Click += EmailNewTask;
             ApplicationBar.Buttons.Add(appBarButtonEmail);
-    
+
+            ApplicationBarMenuItem appBarMenuContact = new ApplicationBarMenuItem();
+            appBarMenuContact.Text = AppResources.ContactUs;
+            appBarMenuContact.Click += ContactUs;
+            ApplicationBar.MenuItems.Add(appBarMenuContact);
         }
 
        
@@ -108,6 +112,16 @@ namespace ISEP_ACM_Student_Chapter
 
             emailComposeTask.Subject = _post.title;
             emailComposeTask.Body = _post.url;
+
+            emailComposeTask.Show();
+        }
+
+        void ContactUs(object sender, EventArgs e)
+        {
+            EmailComposeTask emailComposeTask = new EmailComposeTask();
+
+            emailComposeTask.To = "acm.student.chapter@isep.ipp.pt";
+            emailComposeTask.Subject = "[WP8 App]";
 
             emailComposeTask.Show();
         }

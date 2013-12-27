@@ -125,6 +125,17 @@ namespace ISEP_ACM_Student_Chapter.Resources
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to contact us.
+        /// </summary>
+        public static string ContactUs
+        {
+            get
+            {
+                return ResourceManager.GetString("ContactUs", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to open in browser.
         /// </summary>
         public static string Details_AppBarBtn_OpenBrowser
