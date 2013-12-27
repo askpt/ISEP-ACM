@@ -155,4 +155,7 @@
   <data name="AboutUs_Detail_2" xml:space="preserve">
     <value>O nosso objetivo, enquanto Student Chapter, é fomentar a troca de informação e trazer à nossa região conhecimento, espírito de autoaprendizagem e vontade de inovar.</value>
   </data>
+  <data name="Share" xml:space="preserve">
+    <value>partilhar</value>
+  </data>
 </root>

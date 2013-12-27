@@ -134,6 +134,7 @@
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
     <Content Include="Assets\AppBar\Reload.png" />
+    <Content Include="Assets\AppBar\Share.png" />
     <Content Include="Assets\AppBar\Window-New-Open.png" />
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -155,4 +155,7 @@
   <data name="AboutUs_Detail_2" xml:space="preserve">
     <value>Our objective, as student chapter, is increase the knowledge exchange and bring to our region the expertise, self-learning spirit and desire to inovate.</value>
   </data>
+  <data name="Share" xml:space="preserve">
+    <value>share</value>
+  </data>
 </root>

@@ -37,8 +37,8 @@ namespace ISEP_ACM_Student_Chapter
             appBarButtonLink.Click += appBarButton_Click;
             ApplicationBar.Buttons.Add(appBarButtonLink);
 
-            ApplicationBarIconButton appBarButtonShare = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Window-New-Open.png", UriKind.RelativeOrAbsolute));
-            appBarButtonShare.Text = "Share";
+            ApplicationBarIconButton appBarButtonShare = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Share.png", UriKind.RelativeOrAbsolute));
+            appBarButtonShare.Text = AppResources.Share;
             appBarButtonShare.Click += ShareTask;
             ApplicationBar.Buttons.Add(appBarButtonShare);
         }

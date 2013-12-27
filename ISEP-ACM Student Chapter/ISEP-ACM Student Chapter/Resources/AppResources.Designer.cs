@@ -200,5 +200,16 @@ namespace ISEP_ACM_Student_Chapter.Resources
                 return ResourceManager.GetString("ResourceLanguage", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to share.
+        /// </summary>
+        public static string Share
+        {
+            get
+            {
+                return ResourceManager.GetString("Share", resourceCulture);
+            }
+        }
     }
 }
