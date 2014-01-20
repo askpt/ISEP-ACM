@@ -126,7 +126,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\AppManifest.xml" />
+    <None Include="ISEP-ACM_Student_Chapter_2013_12_30_11_30_33.sap" />
+    <None Include="Properties\AppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
@@ -140,21 +143,18 @@
     <Content Include="Assets\ApplicationIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Assets\Tiles\IconicTileSmall.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Assets\Screenshots\720p_1.png" />
+    <Content Include="Assets\Screenshots\720p_2.png" />
+    <Content Include="Assets\Screenshots\720p_3.png" />
+    <Content Include="Assets\Screenshots\WVGA_1.png" />
+    <Content Include="Assets\Screenshots\WVGA_2.png" />
+    <Content Include="Assets\Screenshots\WVGA_3.png" />
+    <Content Include="Assets\Screenshots\WXGA_1.png" />
+    <Content Include="Assets\Screenshots\WXGA_2.png" />
+    <Content Include="Assets\Screenshots\WXGA_3.png" />
+    <Content Include="Assets\Tiles\medium.png" />
+    <Content Include="Assets\Tiles\mini.png" />
+    <Content Include="Assets\Tiles\wide.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\AppResources.pt.resx">
@@ -172,6 +172,7 @@
       <Name>ISEP-ACM.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
