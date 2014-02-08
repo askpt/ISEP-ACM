@@ -76,6 +76,31 @@ namespace ISEP_ACM_Student_Chapter
             }
         }
 
+        private void Videos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Apply cast to the object sender
+            LongListSelector selector = sender as LongListSelector;
+            if (selector == null)
+            {
+                return;
+            }
+
+            //Apply cast to the selected item
+            Video data = selector.SelectedItem as Video;
+            if (data == null)
+            {
+                return;
+            }
+
+            selector.SelectedItem = null;
+
+            string uri = string.Format("http://www.youtube.com/watch?v={0}", data.VideoId);
+
+            WebBrowserTask task = new WebBrowserTask();
+            task.URL = uri;
+            task.Show();
+        }
+
         private void Posts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Apply cast to the object sender

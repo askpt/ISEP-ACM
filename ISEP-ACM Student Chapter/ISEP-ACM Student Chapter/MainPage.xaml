@@ -29,7 +29,7 @@
                 </phone:LongListSelector>
             </phone:PivotItem>
             <phone:PivotItem Header="{Binding Path=LocalizedResources.Videos, Source={StaticResource LocalizedStrings}}">
-                <phone:LongListSelector ItemsSource="{Binding videos}" LayoutMode="List">
+                <phone:LongListSelector ItemsSource="{Binding videos}" LayoutMode="List" SelectionChanged="Videos_SelectionChanged">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
