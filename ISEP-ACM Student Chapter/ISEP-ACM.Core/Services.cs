@@ -73,5 +73,21 @@ namespace ISEP_ACM.Core
             }
         }
 
+        public static async Task<VideoSearch> GetVideosSearch()
+        {
+            HttpClient client = new HttpClient();
+
+            var baseUri =
+                "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCZdd-QeHpbPOSP-em5VW0zA&key=AIzaSyBjbuB4QjKjN73I2bAvOkaLGjIMIsE2x1U&maxResults=5";
+
+            VideoSearch search = new VideoSearch();
+
+            var str = await client.GetStringAsync(baseUri);
+
+            search = JsonConvert.DeserializeObject<VideoSearch>(str);
+
+            return search;
+        }
+
     }
 }
