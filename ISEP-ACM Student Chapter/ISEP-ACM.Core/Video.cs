@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ISEP_ACM.Core
 {
-    internal class Video
+    public class Video
     {
         public string Title { get; set; }
         public string VideoId { get; set; }

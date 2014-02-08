@@ -89,5 +89,19 @@ namespace ISEP_ACM.Core
             return search;
         }
 
+        public static Video CreateVideo(Item item)
+        {
+            Video video = new Video();
+
+            if (item.id.videoId != null)
+            {
+                video.VideoId = item.id.videoId;
+                video.Title = item.snippet.title;
+                video.Published = DateTime.Parse(item.snippet.publishedAt);
+                video.Thumbnail = item.snippet.thumbnails.medium.url;
+            }
+            return video;
+        }
+
     }
 }
