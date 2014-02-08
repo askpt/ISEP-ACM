@@ -13,4 +13,9 @@ namespace ISEP_ACM.Core
         public string Thumbnail { get; set; }
         public DateTime Published { get; set; }
     }
+
+    public class RootVideo
+    {
+        public List<Video> Videos { get; set; }
+    }
 }

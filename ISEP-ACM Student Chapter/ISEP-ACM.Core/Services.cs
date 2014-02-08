@@ -13,7 +13,9 @@ namespace ISEP_ACM.Core
     public class Services
     {
         private const string _fileName = "Posts.json";
+        private const string _videoFileName = "Videos.json";
 
+        #region Posts
         private static async Task<string> GetAllPosts()
         {
             HttpClient client = new HttpClient();
@@ -72,7 +74,9 @@ namespace ISEP_ACM.Core
                 }
             }
         }
+        #endregion
 
+        #region videos
         public static async Task<VideoSearch> GetVideosSearch()
         {
             HttpClient client = new HttpClient();
@@ -89,7 +93,7 @@ namespace ISEP_ACM.Core
             return search;
         }
 
-        public static Video CreateVideo(Item item)
+        public static Video CreateVideoItem(Item item)
         {
             Video video = new Video();
 
@@ -103,5 +107,65 @@ namespace ISEP_ACM.Core
             return video;
         }
 
+        public static async Task CreateVideos()
+        {
+            VideoSearch search = await GetVideosSearch();
+            RootVideo videos = new RootVideo();
+            videos.Videos = new List<Video>();
+            foreach (Item item in search.items)
+            {
+                if (item.id.videoId != null)
+                {
+                    Video videoToAdd = CreateVideoItem(item);
+                    videos.Videos.Add(videoToAdd);
+                }
+            }
+
+            string json = JsonConvert.SerializeObject(videos);
+
+            using (var storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                if (storageFolder.FileExists(_videoFileName))
+                {
+                    storageFolder.DeleteFile(_videoFileName);
+                }
+
+                using (var stream = storageFolder.CreateFile(_videoFileName))
+                {
+                    using (StreamWriter writter = new StreamWriter(stream))
+                    {
+                        writter.Write(json);
+                    }
+                }
+            }
+        }
+
+        public static async Task<List<Video>> LoadVideos()
+        {
+            string json;
+
+            using (IsolatedStorageFile storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
+            {
+                if (!storageFolder.FileExists(_videoFileName))
+                {
+                    await CreateVideos();
+                }
+
+
+                using (IsolatedStorageFileStream stream = storageFolder.OpenFile(_videoFileName, FileMode.Open))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        json = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            RootVideo videos = JsonConvert.DeserializeObject<RootVideo>(json);
+
+            return videos.Videos;
+        }
+
+        #endregion
     }
 }
