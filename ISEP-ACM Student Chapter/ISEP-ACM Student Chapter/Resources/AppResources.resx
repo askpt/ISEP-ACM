@@ -164,4 +164,7 @@
   <data name="Details_SendEmail" xml:space="preserve">
     <value>send email</value>
   </data>
+  <data name="Videos" xml:space="preserve">
+    <value>videos</value>
+  </data>
 </root>

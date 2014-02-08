@@ -233,5 +233,16 @@ namespace ISEP_ACM_Student_Chapter.Resources
                 return ResourceManager.GetString("Share", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to videos.
+        /// </summary>
+        public static string Videos
+        {
+            get
+            {
+                return ResourceManager.GetString("Videos", resourceCulture);
+            }
+        }
     }
 }
