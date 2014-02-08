@@ -112,7 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.pt.resx</DependentUpon>
     </Compile>
-    <Compile Include="RootObject.cs" />
+    <Compile Include="Helpers\RootObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
