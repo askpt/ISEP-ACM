@@ -32,10 +32,12 @@
                 <phone:LongListSelector ItemsSource="{Binding videos}" LayoutMode="List" SelectionChanged="Videos_SelectionChanged">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="0,0,0,17">
-                                <Image/>
-                                <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
-                                <TextBlock Text="{Binding Published, StringFormat='dd/MM/yyyy'}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                            <StackPanel Margin="0,0,0,17" Orientation="Horizontal">
+                                <Image Source="{Binding Thumbnail}" Width="150" Height="75"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" Margin="12,0,0,0" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                    <TextBlock Text="{Binding Published, StringFormat='dd/MM/yyyy'}" TextWrapping="NoWrap" Margin="12,-6,0,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                </StackPanel>
                             </StackPanel>
                         </DataTemplate>
                     </phone:LongListSelector.ItemTemplate>
