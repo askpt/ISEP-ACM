@@ -16,7 +16,7 @@ namespace ISEP_ACM_Student_Chapter
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        public static Posts posts;
+        public static RootObject root;
 
         // Constructor
         public MainPage()
@@ -26,21 +26,25 @@ namespace ISEP_ACM_Student_Chapter
             // Sample code to localize the ApplicationBar
             BuildLocalizedApplicationBar();
 
-            InitializePosts();
+            InitializeAll();
         }
 
-        private async void InitializePosts()
+        private async void InitializeAll()
         {
             try
             {
-                DataContext = await Services.LoadPosts();
+                root = new RootObject();
+                Posts posts = await Services.LoadPosts();
+                root.posts = posts.posts;
+                root.videos = await Services.LoadVideos();
+
+                DataContext = root;
             }
             catch (Exception)
             {
 
                 MessageBox.Show(AppResources.Error_Network);
             }
-            
         }
 
         // Sample code for building a localized ApplicationBar
@@ -65,8 +69,7 @@ namespace ISEP_ACM_Student_Chapter
         {
             if (DeviceNetworkInformation.IsNetworkAvailable)
             {
-                await Services.CreatePosts();
-                InitializePosts();
+                InitializeAll();
             }
             else
             {
