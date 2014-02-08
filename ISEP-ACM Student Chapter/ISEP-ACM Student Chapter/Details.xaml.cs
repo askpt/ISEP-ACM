@@ -5,6 +5,7 @@ using System.Net;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using ISEP_ACM_Student_Chapter.Helpers;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
@@ -16,13 +17,14 @@ namespace ISEP_ACM_Student_Chapter
 {
     public partial class Details : PhoneApplicationPage
     {
-
+        private WebBrowserHelperScroll browserHelper;
         private Post _post;
         public Details()
         {
             InitializeComponent();
 
-                        
+            browserHelper = new WebBrowserHelperScroll(BrowserView);
+            browserHelper.ScrollDisabled = true;
         }
 
         // Sample code for building a localized ApplicationBar
