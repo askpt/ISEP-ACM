@@ -16,8 +16,6 @@ namespace ISEP_ACM_Student_Chapter
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        public static RootObject root;
-
         // Constructor
         public MainPage()
         {
@@ -31,9 +29,10 @@ namespace ISEP_ACM_Student_Chapter
 
         private async void InitializeAll()
         {
+            RootObject root = new RootObject();
+
             try
             {
-                root = new RootObject();
                 Posts posts = await Services.LoadPosts();
                 root.posts = posts.posts;
                 root.videos = await Services.LoadVideos();

@@ -17,7 +17,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <phone:PivotItem Header="{Binding Path=LocalizedResources.MainPage_News, Source={StaticResource LocalizedStrings}}">
-                <phone:LongListSelector ItemsSource="{Binding root.posts}" LayoutMode="List" SelectionChanged="LongListSelector_SelectionChanged">
+                <phone:LongListSelector ItemsSource="{Binding posts}" LayoutMode="List" SelectionChanged="LongListSelector_SelectionChanged">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
@@ -29,7 +29,7 @@
                 </phone:LongListSelector>
             </phone:PivotItem>
             <phone:PivotItem Header="{Binding Path=LocalizedResources.Videos, Source={StaticResource LocalizedStrings}}">
-                <phone:LongListSelector ItemsSource="{Binding root.videos}" LayoutMode="List">
+                <phone:LongListSelector ItemsSource="{Binding videos}" LayoutMode="List">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Margin="0,0,0,17">
