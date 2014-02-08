@@ -28,7 +28,7 @@
                     </phone:LongListSelector.ItemTemplate>
                 </phone:LongListSelector>
             </phone:PivotItem>
-            <phone:PivotItem Header="videos">
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.Videos, Source={StaticResource LocalizedStrings}}">
                 <phone:LongListSelector ItemsSource="{Binding root.videos}" LayoutMode="List">
                     <phone:LongListSelector.ItemTemplate>
                         <DataTemplate>
