@@ -16,8 +16,6 @@ namespace ISEP_ACM_Student_Chapter
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        public static Posts posts;
-
         // Constructor
         public MainPage()
         {
@@ -26,21 +24,26 @@ namespace ISEP_ACM_Student_Chapter
             // Sample code to localize the ApplicationBar
             BuildLocalizedApplicationBar();
 
-            InitializePosts();
+            InitializeAll();
         }
 
-        private async void InitializePosts()
+        private async void InitializeAll()
         {
+            RootObject root = new RootObject();
+
             try
             {
-                DataContext = await Services.LoadPosts();
+                Posts posts = await Services.LoadPosts();
+                root.posts = posts.posts;
+                root.videos = await Services.LoadVideos();
+
+                DataContext = root;
             }
             catch (Exception)
             {
 
                 MessageBox.Show(AppResources.Error_Network);
             }
-            
         }
 
         // Sample code for building a localized ApplicationBar
@@ -65,8 +68,7 @@ namespace ISEP_ACM_Student_Chapter
         {
             if (DeviceNetworkInformation.IsNetworkAvailable)
             {
-                await Services.CreatePosts();
-                InitializePosts();
+                InitializeAll();
             }
             else
             {
@@ -74,7 +76,32 @@ namespace ISEP_ACM_Student_Chapter
             }
         }
 
-        private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Videos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Apply cast to the object sender
+            LongListSelector selector = sender as LongListSelector;
+            if (selector == null)
+            {
+                return;
+            }
+
+            //Apply cast to the selected item
+            Video data = selector.SelectedItem as Video;
+            if (data == null)
+            {
+                return;
+            }
+
+            selector.SelectedItem = null;
+
+            string uri = string.Format("http://www.youtube.com/watch?v={0}", data.VideoId);
+
+            WebBrowserTask task = new WebBrowserTask();
+            task.URL = uri;
+            task.Show();
+        }
+
+        private void Posts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Apply cast to the object sender
             LongListSelector selector = sender as LongListSelector;

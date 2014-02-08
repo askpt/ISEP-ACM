@@ -164,4 +164,7 @@
   <data name="ContactUs" xml:space="preserve">
     <value>contacta-nos</value>
   </data>
+  <data name="Videos" xml:space="preserve">
+    <value>vídeos</value>
+  </data>
 </root>

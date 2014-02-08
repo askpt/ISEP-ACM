@@ -95,6 +95,8 @@
     <Compile Include="Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BrowserHelper.cs" />
+    <Compile Include="Helpers\LinqToTree.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -110,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AppResources.pt.resx</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\RootObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
