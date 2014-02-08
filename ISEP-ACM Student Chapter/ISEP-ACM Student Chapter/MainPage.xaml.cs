@@ -76,7 +76,7 @@ namespace ISEP_ACM_Student_Chapter
             }
         }
 
-        private void LongListSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Posts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Apply cast to the object sender
             LongListSelector selector = sender as LongListSelector;
