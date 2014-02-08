@@ -1,6 +1,7 @@
 Esta aplicação tem como objetivo funcionar como leitor das noticias do nosso site principal.
 
 ### Novidades v1.1.0.0 ###
+• Novo: Lista de vídeos do Youtube
 • Correcção: Scroll nas páginas das notícias
 
 ### Novidades v1.0.0.0 ###
