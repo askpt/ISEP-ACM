@@ -11,21 +11,27 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True"
+    xmlns:wbp="clr-namespace:ISEP_ACM_Student_Chapter.Helpers">
+
+    
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <phone:Pivot Title="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}">
             <phone:PivotItem Header="{Binding title}">
-                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+                <Grid x:Name="ContentPanel" Grid.Row="0" Margin="12,0,12,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <phone:WebBrowser Foreground="{StaticResource WebBrowserForegroundColor}"
                                       Background="{StaticResource WebBrowserBackgroundColor}"
                                       Name="BrowserView"
+                                      wbp:WebBrowserHelperScroll.Html="{Binding content}"
                                       IsScriptEnabled="True"
                                       ScriptNotify="BrowserView_ScriptNotify"/>
                 </Grid>
             </phone:PivotItem>
-            
         </phone:Pivot>
     </Grid>
 

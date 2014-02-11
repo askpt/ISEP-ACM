@@ -68,6 +68,7 @@ namespace ISEP_ACM.Core
                 GetBrowserColor("PhoneAccentColor")));
             head.Append("</style>");
             head.Append(NotifyScript);
+            head.Append("<meta name=\"viewport\" content=\"user-scalable=no\" /> ");
             head.Append("</head>");
 
             return head.ToString();

@@ -2,6 +2,7 @@
  * Taken from: http://www.scottlogic.co.uk/blog/colin/2011/11/suppressing-zoom-and-scroll-interactions-in-the-windows-phone-7-browser-control/
  */
 
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -58,7 +59,7 @@ namespace ISEP_ACM_Student_Chapter.Helpers
         public WebBrowserHelperScroll(WebBrowser browser)
         {
             _browser = browser;
-            browser.Loaded += new RoutedEventHandler(browser_Loaded);
+            browser.Loaded += browser_Loaded;
         }
 
 
@@ -71,31 +72,25 @@ namespace ISEP_ACM_Student_Chapter.Helpers
             border.ManipulationCompleted += Border_ManipulationCompleted;
         }
 
-
-        private void Border_ManipulationCompleted(object sender,
-            ManipulationCompletedEventArgs e)
+        //FIX Check the scroll manipulation
+        private void Border_ManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
         {
             // suppress zoom
-            if (e.FinalVelocities.ExpansionVelocity.X != 0.0 ||
-                e.FinalVelocities.ExpansionVelocity.Y != 0.0)
+            if (e.FinalVelocities.ExpansionVelocity.X != 0.0 || e.FinalVelocities.ExpansionVelocity.Y != 0.0)
                 e.Handled = true;
         }
 
 
-        private void Border_ManipulationDelta(object sender,
-            ManipulationDeltaEventArgs e)
+        private void Border_ManipulationDelta(object sender, ManipulationDeltaEventArgs e)
         {
             // suppress zoom
-            if (e.DeltaManipulation.Scale.X != 0.0 ||
-                e.DeltaManipulation.Scale.Y != 0.0)
+            if (e.DeltaManipulation.Scale.X != 0.0 || e.DeltaManipulation.Scale.Y != 0.0)
                 e.Handled = true;
-
 
             // optionally suppress scrolling
             if (ScrollDisabled)
             {
-                if (e.DeltaManipulation.Translation.X != 0.0 ||
-                    e.DeltaManipulation.Translation.Y != 0.0)
+                if (e.DeltaManipulation.Translation.X != 0.0 || e.DeltaManipulation.Translation.Y != 0.0)
                     e.Handled = true;
             }
         }

@@ -95,7 +95,7 @@
     <Compile Include="Details.xaml.cs">
       <DependentUpon>Details.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\BrowserHelper.cs" />
+    <Compile Include="Helpers\WebBrowserHelperScroll.cs" />
     <Compile Include="Helpers\LinqToTree.cs" />
     <Compile Include="LocalizedStrings.cs" />
     <Compile Include="MainPage.xaml.cs">
