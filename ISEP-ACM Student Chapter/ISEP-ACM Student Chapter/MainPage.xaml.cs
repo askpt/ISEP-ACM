@@ -33,8 +33,10 @@ namespace ISEP_ACM_Student_Chapter
 
             try
             {
+                await Services.CreatePosts();
                 Posts posts = await Services.LoadPosts();
                 root.posts = posts.posts;
+                await Services.CreateVideos();
                 root.videos = await Services.LoadVideos();
 
                 DataContext = root;
