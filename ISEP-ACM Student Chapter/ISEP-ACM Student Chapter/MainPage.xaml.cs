@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
@@ -14,7 +10,7 @@ using Microsoft.Phone.Tasks;
 
 namespace ISEP_ACM_Student_Chapter
 {
-    public partial class MainPage : PhoneApplicationPage
+    public partial class MainPage
     {
         // Constructor
         public MainPage()
@@ -33,8 +29,10 @@ namespace ISEP_ACM_Student_Chapter
 
             try
             {
-                Posts posts = await Services.LoadPosts();
+                await Services.CreatePosts();
+                var posts = await Services.LoadPosts();
                 root.posts = posts.posts;
+                await Services.CreateVideos();
                 root.videos = await Services.LoadVideos();
 
                 DataContext = root;
@@ -64,7 +62,7 @@ namespace ISEP_ACM_Student_Chapter
             ApplicationBar.MenuItems.Add(appBarMenuContact);
         }
 
-        async void appBarButton_Click(object sender, EventArgs e)
+        void appBarButton_Click(object sender, EventArgs e)
         {
             if (DeviceNetworkInformation.IsNetworkAvailable)
             {
@@ -94,10 +92,10 @@ namespace ISEP_ACM_Student_Chapter
 
             selector.SelectedItem = null;
 
-            string uri = string.Format("http://www.youtube.com/watch?v={0}", data.VideoId);
+            Uri uri = new Uri(string.Format("http://www.youtube.com/watch?v={0}", data.VideoId), UriKind.Relative);
 
             WebBrowserTask task = new WebBrowserTask();
-            task.URL = uri;
+            task.Uri = uri;
             task.Show();
         }
 

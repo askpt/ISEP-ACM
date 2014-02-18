@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using ISEP_ACM_Student_Chapter.Helpers;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
 using ISEP_ACM.Core;
-using System.Threading.Tasks;
 using Microsoft.Phone.Tasks;
 
 namespace ISEP_ACM_Student_Chapter
 {
-    public partial class Details : PhoneApplicationPage
+    public partial class Details
     {
-        private WebBrowserHelperScroll browserHelper;
         private Post _post;
+        private WebBrowserHelperScroll browserHelper;
         public Details()
         {
             InitializeComponent();
@@ -75,18 +69,11 @@ namespace ISEP_ACM_Student_Chapter
                 if (item.id == index)
                 {
                     _post = item;
-                    LoadAll(item);
+                    _post.content = WebBrowserHelper.WrapHtml(item.content, 0);
                 }
             }
-        }
-
-        private void LoadAll(Post item)
-        {
-            DataContext = item;
-
-            BrowserView.NavigateToString(WebBrowserHelper.WrapHtml(item.content, 0));
-
             BuildLocalizedApplicationBar();
+            DataContext = _post;
         }
 
         private void BrowserView_ScriptNotify(object sender, NotifyEventArgs e)
