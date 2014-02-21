@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using Microsoft.Phone.Controls;
@@ -25,22 +26,28 @@ namespace ISEP_ACM_Student_Chapter
 
         private async void InitializeAll()
         {
-            RootObject root = new RootObject();
+            var root = new RootObject
+            {
+                posts = new List<Post>(), 
+                videos = new List<Video>()
+            };
 
             try
             {
                 await Services.CreatePosts();
-                var posts = await Services.LoadPosts();
-                root.posts = posts.posts;
                 await Services.CreateVideos();
-                root.videos = await Services.LoadVideos();
-
-                DataContext = root;
             }
             catch (Exception)
             {
-
                 MessageBox.Show(AppResources.Error_Network);
+            }
+            finally
+            {
+                var posts = Services.LoadPosts();
+                root.posts = posts.posts;
+                root.videos = Services.LoadVideos();
+
+                DataContext = root;
             }
         }
 
@@ -92,7 +99,7 @@ namespace ISEP_ACM_Student_Chapter
 
             selector.SelectedItem = null;
 
-            Uri uri = new Uri(string.Format("http://www.youtube.com/watch?v={0}", data.VideoId), UriKind.Relative);
+            Uri uri = new Uri(string.Format("http://www.youtube.com/watch?v={0}", data.VideoId), UriKind.Absolute);
 
             WebBrowserTask task = new WebBrowserTask();
             task.Uri = uri;

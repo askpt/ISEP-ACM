@@ -58,12 +58,12 @@ namespace ISEP_ACM_Student_Chapter
             webBrowserTask.Show(); 
         }
 
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
             int index = Convert.ToInt32(NavigationContext.QueryString["id"]);
 
-            Posts posts = await Services.LoadPosts();
+            Posts posts = Services.LoadPosts();
             foreach (Post item in posts.posts)
             {
                 if (item.id == index)

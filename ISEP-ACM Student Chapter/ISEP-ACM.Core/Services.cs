@@ -12,7 +12,7 @@ namespace ISEP_ACM.Core
 {
     public class Services
     {
-        private const string _fileName = "Posts.json";
+        private const string _postsFileName = "Posts.json";
         private const string _videoFileName = "Videos.json";
 
         #region Posts
@@ -27,28 +27,27 @@ namespace ISEP_ACM.Core
             return jsonPosts;
         }
 
-        public static async Task<Posts> LoadPosts()
+        public static Posts LoadPosts()
         {
             string jsonPosts;
+            Posts posts = new Posts();
 
             using (IsolatedStorageFile storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                if (!storageFolder.FileExists(_fileName))
+                if (!storageFolder.FileExists(_postsFileName))
                 {
-                    await CreatePosts();
+                    return posts;
                 }
-
-
-                using (IsolatedStorageFileStream stream = storageFolder.OpenFile(_fileName, FileMode.Open))
+                using (IsolatedStorageFileStream stream = storageFolder.OpenFile(_postsFileName, FileMode.Open))
                 {
                     using (StreamReader reader = new StreamReader(stream))
                     {
                         jsonPosts = reader.ReadToEnd();
+                        posts = JsonConvert.DeserializeObject<Posts>(jsonPosts);
                     }
                 }
             }
 
-            Posts posts = JsonConvert.DeserializeObject<Posts>(jsonPosts);
 
             return posts;
         }
@@ -60,12 +59,12 @@ namespace ISEP_ACM.Core
 
             using (var storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                if (storageFolder.FileExists(_fileName))
+                if (storageFolder.FileExists(_postsFileName))
                 {
-                    storageFolder.DeleteFile(_fileName);
+                    storageFolder.DeleteFile(_postsFileName);
                 }
 
-                using (var stream = storageFolder.CreateFile(_fileName))
+                using (var stream = storageFolder.CreateFile(_postsFileName))
                 {
                     using (StreamWriter writter = new StreamWriter(stream))
                     {
@@ -140,28 +139,29 @@ namespace ISEP_ACM.Core
             }
         }
 
-        public static async Task<List<Video>> LoadVideos()
+        public static List<Video> LoadVideos()
         {
             string json;
+            var videos = new RootVideo()
+            {
+                Videos = new List<Video>()
+            };
 
             using (IsolatedStorageFile storageFolder = IsolatedStorageFile.GetUserStoreForApplication())
             {
-                if (!storageFolder.FileExists(_videoFileName))
+                if (!storageFolder.FileExists(_postsFileName))
                 {
-                    await CreateVideos();
+                    return videos.Videos;
                 }
-
-
                 using (IsolatedStorageFileStream stream = storageFolder.OpenFile(_videoFileName, FileMode.Open))
                 {
                     using (StreamReader reader = new StreamReader(stream))
                     {
                         json = reader.ReadToEnd();
+                        videos = JsonConvert.DeserializeObject<RootVideo>(json);
                     }
                 }
             }
-
-            RootVideo videos = JsonConvert.DeserializeObject<RootVideo>(json);
 
             return videos.Videos;
         }
