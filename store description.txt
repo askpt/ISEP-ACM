@@ -1,6 +1,6 @@
 Esta aplicação tem como objetivo funcionar como leitor das noticias do nosso site principal.
 
-### Novidades v1.1.0.0 ###
+### Novidades v1.1.2.0 ###
 • Correcção: Correcções Diversas
 
 ### Novidades v1.1.0.0 ###
