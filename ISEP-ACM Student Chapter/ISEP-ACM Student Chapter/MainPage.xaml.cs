@@ -58,13 +58,17 @@ namespace ISEP_ACM_Student_Chapter
             ApplicationBar = new ApplicationBar();
 
             // Create a new button and set the text value to the localized string from AppResources.
-            ApplicationBarIconButton appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Reload.png", UriKind.RelativeOrAbsolute));
-            appBarButton.Text = AppResources.MainPage_AppBarBtn_Refresh;
+            var appBarButton = new ApplicationBarIconButton(new Uri("/Assets/AppBar/Reload.png", UriKind.RelativeOrAbsolute))
+            {
+                Text = AppResources.MainPage_AppBarBtn_Refresh
+            };
             appBarButton.Click += appBarButton_Click;
             ApplicationBar.Buttons.Add(appBarButton);
 
-            ApplicationBarMenuItem appBarMenuContact = new ApplicationBarMenuItem();
-            appBarMenuContact.Text = AppResources.ContactUs;
+            var appBarMenuContact = new ApplicationBarMenuItem
+            {
+                Text = AppResources.ContactUs
+            };
             appBarMenuContact.Click += ContactUs;
             ApplicationBar.MenuItems.Add(appBarMenuContact);
         }
@@ -84,14 +88,14 @@ namespace ISEP_ACM_Student_Chapter
         private void Videos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Apply cast to the object sender
-            LongListSelector selector = sender as LongListSelector;
+            var selector = sender as LongListSelector;
             if (selector == null)
             {
                 return;
             }
 
             //Apply cast to the selected item
-            Video data = selector.SelectedItem as Video;
+            var data = selector.SelectedItem as Video;
             if (data == null)
             {
                 return;
@@ -99,24 +103,26 @@ namespace ISEP_ACM_Student_Chapter
 
             selector.SelectedItem = null;
 
-            Uri uri = new Uri(string.Format("http://www.youtube.com/watch?v={0}", data.VideoId), UriKind.Absolute);
+            var uri = new Uri(string.Format("http://www.youtube.com/watch?v={0}", data.VideoId), UriKind.Absolute);
 
-            WebBrowserTask task = new WebBrowserTask();
-            task.Uri = uri;
+            var task = new WebBrowserTask
+            {
+                Uri = uri
+            };
             task.Show();
         }
 
         private void Posts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //Apply cast to the object sender
-            LongListSelector selector = sender as LongListSelector;
+            var selector = sender as LongListSelector;
             if (selector == null)
             {
                 return;
             }
 
             //Apply cast to the selected item
-            Post data = selector.SelectedItem as Post;
+            var data = selector.SelectedItem as Post;
             if (data == null)
             {
                 return;
@@ -124,17 +130,18 @@ namespace ISEP_ACM_Student_Chapter
 
             selector.SelectedItem = null;
 
-            Uri uri = new Uri(string.Format("/Details.xaml?id={0}", data.id), UriKind.Relative);
+            var uri = new Uri(string.Format("/Details.xaml?id={0}", data.id), UriKind.Relative);
 
             NavigationService.Navigate(uri);
         }
 
-        void ContactUs(object sender, EventArgs e)
+        static void ContactUs(object sender, EventArgs e)
         {
-            EmailComposeTask emailComposeTask = new EmailComposeTask();
-
-            emailComposeTask.To = "acm.student.chapter@isep.ipp.pt";
-            emailComposeTask.Subject = "[WP8 App]";
+            var emailComposeTask = new EmailComposeTask
+            {
+                To = "acm.student.chapter@isep.ipp.pt", 
+                Subject = "[WP8 App]"
+            };
 
             emailComposeTask.Show();
         }
