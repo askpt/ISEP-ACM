@@ -22,6 +22,18 @@ namespace ISEP_ACM_Student_Chapter
             BuildLocalizedApplicationBar();
 
             InitializeAll();
+
+            FeedbackOverlay.VisibilityChanged += FeedbackOverlay_VisibilityChanged;
+        }
+
+        void FeedbackOverlay_VisibilityChanged(object sender, EventArgs e)
+        {
+            ApplicationBar.IsVisible = (FeedbackOverlay.Visibility != Visibility.Visible);
+
+            if (ApplicationBar.IsVisible)
+            {
+                FeedbackOverlay.Reset();
+            }
         }
 
         private async void InitializeAll()
