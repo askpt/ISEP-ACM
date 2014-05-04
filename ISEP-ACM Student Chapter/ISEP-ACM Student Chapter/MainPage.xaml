@@ -6,6 +6,7 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rma="clr-namespace:RateMyApp.Controls;assembly=RateMyApp"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -50,6 +51,16 @@
                 </StackPanel>
             </phone:PivotItem>
         </phone:Pivot>
+        <rma:FeedbackOverlay x:Name="FeedbackOverlay"
+                             Grid.RowSpan="2"                              
+                             EnableAnimation="True"                              
+                             FeedbackTo="isep.acm@gmail.com"                              
+                             FeedbackSubject="[Feedback]"                              
+                             CompanyName="ISEP-ACM"                              
+                             ApplicationName="ISEP-ACM Student Chapter"                              
+                             FirstCount="10"                              
+                             SecondCount="10"                              
+                             CountDays="False" />
 
         <!-- LOCALIZATION NOTE:
             To localize the displayed strings copy their values to appropriately named
