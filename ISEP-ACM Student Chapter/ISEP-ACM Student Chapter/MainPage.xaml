@@ -58,8 +58,8 @@
                              FeedbackSubject="[Feedback]"                              
                              CompanyName="ISEP-ACM"                              
                              ApplicationName="ISEP-ACM Student Chapter"                              
-                             FirstCount="10"                              
-                             SecondCount="10"                              
+                             FirstCount="5"                              
+                             SecondCount="5"                              
                              CountDays="False" />
 
         <!-- LOCALIZATION NOTE:
