@@ -27,8 +27,7 @@ namespace ISEP_ACM.Core
                     {
                         a = document.getElementsByTagName('a');
                         for(var i=0; i < a.length; i++){
-                            var msg = a[i].href;
-                            a[i].onclick = function() {notify(msg);};
+                            a[i].onclick = function() {notify(this.href);};
                         }
                     }
                     function notify(msg)
