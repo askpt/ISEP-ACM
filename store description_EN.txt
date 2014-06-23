@@ -1,5 +1,8 @@
 This application aims to function as the news reader of our main site. 
 
+### Version v1.1.3.5 ###
+• Fix: Fixed the click on link bug 
+
 ### Version v1.1.3.4 ###
 • Fix: Several fixes 
 
