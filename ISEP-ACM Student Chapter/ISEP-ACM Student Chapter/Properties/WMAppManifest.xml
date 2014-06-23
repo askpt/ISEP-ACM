@@ -5,7 +5,7 @@
     <Language code="pt" />
     <Language code="en" />
   </Languages>
-  <App xmlns="" ProductID="{1784eaf1-0fdc-4803-b582-2820e0bd1546}" Title="ISEP-ACM Student Chapter" RuntimeType="Silverlight" Version="1.1.3.4" Genre="apps.normal" Author="André Silva" Description="Acede as notícias do grupo de estudantes ISEP-ACM." Publisher="askpt" PublisherID="{0186a106-bba7-471a-99d2-12ad1fcdc88f}">
+  <App xmlns="" ProductID="{1784eaf1-0fdc-4803-b582-2820e0bd1546}" Title="ISEP-ACM Student Chapter" RuntimeType="Silverlight" Version="1.1.3.5" Genre="apps.normal" Author="André Silva" Description="Acede as notícias do grupo de estudantes ISEP-ACM." Publisher="askpt" PublisherID="{0186a106-bba7-471a-99d2-12ad1fcdc88f}">
     <IconPath IsRelative="true" IsResource="false">Assets\Tiles\mini.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
