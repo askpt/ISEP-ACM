@@ -7,11 +7,17 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using ISEP_ACM_Student_Chapter.Resources;
+using Microsoft.ApplicationInsights;
 
 namespace ISEP_ACM_Student_Chapter
 {
     public partial class App : Application
     {
+        /// <summary>
+        /// Allows tracking page views, exceptions and other telemetry through the Microsoft Application Insights service.
+        /// </summary>
+        public static TelemetryClient TelemetryClient;
+
         /// <summary>
         /// Provides easy access to the root frame of the Phone Application.
         /// </summary>
@@ -23,6 +29,8 @@ namespace ISEP_ACM_Student_Chapter
         /// </summary>
         public App()
         {
+            TelemetryClient = new TelemetryClient();
+
             // Global handler for uncaught exceptions.
             UnhandledException += Application_UnhandledException;
 
