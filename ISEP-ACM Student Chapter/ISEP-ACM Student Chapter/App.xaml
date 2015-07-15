@@ -5,11 +5,6 @@
       <local:LocalizedStrings xmlns:local="clr-namespace:ISEP_ACM_Student_Chapter" x:Key="LocalizedStrings" />
       <SolidColorBrush x:Key="WebBrowserForegroundColor" Color="{StaticResource PhoneForegroundColor}" />
       <SolidColorBrush x:Key="WebBrowserBackgroundColor" Color="{StaticResource PhoneBackgroundColor}" />
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary>
-          <ai:ApplicationInsightsModule x:Key="ApplicationInsightsModule" xmlns:ai="clr-namespace:Microsoft.ApplicationInsights.Telemetry.WindowsStore;assembly=Microsoft.ApplicationInsights.Telemetry.WindowsStore" />
-        </ResourceDictionary>
-      </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Application.Resources>
   <Application.ApplicationLifetimeObjects>
