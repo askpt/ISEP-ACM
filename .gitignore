@@ -170,3 +170,4 @@ $RECYCLE.BIN/
 ### SublimeText ###
 # SublimeText project files
 *.sublime-workspace
+*.ide
